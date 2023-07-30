@@ -1,0 +1,113 @@
+<!-- <div class="container"  *ngIf="rates">
+  <h1>Currency Converter</h1>
+  <div *ngFor="let sel of selections">
+
+
+ 
+  <!-- <label>From: </label> <span>{{from}}</span>
+ 
+
+  <label>To: </label><span>{{to}}</span> -->
+
+  <!-- <input type="number" placeholder="amount" [(ngModel)]="amount">
+  <div *ngFor="let sel of selections">
+  <label>From: </label>
+  <select [(ngModel)]="from" (change)="loadRates()">
+      <option *ngFor="let c of getAllCurrencies()" [value]="c">{{c}}</option> 
+  </select>
+
+  <label>To: </label>
+  <select [(ngModel)]="to">
+      <option *ngFor="let c of getAllCurrencies()" [value]="c">{{c}}</option> 
+  </select>
+
+
+  <button
+  class="add-btn"(click)="addSelection()"  >+ </button>
+
+
+<br>
+
+<b [style.color]="amount < 0 ? 'red': '' ">{{amount.toFixed(2)}} {{from}} = {{convert().toFixed(2)}} {{to}}</b>
+
+<br>
+ 
+
+
+  <br>
+
+ 
+</div>
+
+
+</div>
+
+
+<div class="container"  *ngIf="rates">
+  <h1>Currency Converter</h1>
+
+ <label>From:</label>
+  <select [(ngModel)]="selectedFromCurrency">
+    <option *ngFor="let currency of currencies">
+      {{currency}}
+    </option>
+  </select>
+  
+  <label>To:</label>  
+  <select [(ngModel)]="selectedToCurrency">
+    <option *ngFor="let currency of currencies">
+      {{currency}}
+    </option>
+  </select>
+ 
+ 
+  <button
+  class="add-btn"
+  (click)="addSelection()"  
+>
+  +
+</button>
+
+<div *ngFor="let sel of selections">
+
+  <label>
+    Convert From {{sel}}:
+  </label>
+  
+  <select>
+    <option *ngFor="let currency of currencies">
+      {{currency}}
+    </option>
+  </select>
+
+</div>
+
+
+
+
+</div>  -->
+
+
+<div class="container" class="currencies">
+  <h1>Currency Converter</h1>
+  <ng-container *ngIf="(data$ | async) as data">
+    <div class="prime-currency">
+      {{data.updatedAt | date: 'YYYY-MM-dd HH:mm:ss'}} {{data.primeCurrency}}
+    </div>
+
+    <select #currencySelector>
+      <option *ngFor="let opt of data.availableCurrencies || []; let i = index"
+              [value]="opt"
+              [defaultSelected]="i === 0"
+      >{{opt}}</option>
+    </select>
+    <button (click)="addCurrency($any(currencySelector.value))">+</button>
+
+    <div class="currency" *ngFor="let cur of data?.rates || []">
+      {{cur.currency}} {{cur.rate | number: '1.2-2'}}
+    </div>
+  </ng-container>
+</div>
+
+
+
