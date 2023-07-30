@@ -1,4 +1,4 @@
-# MyFirstNagularProject
+# CurrencyConverter - UTSHO MOMEN
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.5.
 
@@ -6,9 +6,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+Also everything is uploaded in stackblitz so that you check it in live and responsivenes. 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
@@ -16,12 +15,16 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `npx ng test` to execute the unit tests via [jest] the tests are failed, i could n't have time to build other cases.
+
+i have just adjust some test case in other component but i couldn't figure it out because of time and the deadline. Please also take a look
 
 ## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+I was planning to do Cyprus end to end test and as i was saying deadline is on the way so i cannot do it.
 
-## Further help
+## In Future
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+If it possible then give me some more time to do the unit test 
+
+
